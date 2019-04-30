@@ -1,0 +1,891 @@
+{
+  "name": "flowershop chatbot",
+  "intents": [
+    {
+      "intent": "greetings",
+      "examples": [
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "good evening"
+        },
+        {
+          "text": "halo"
+        },
+        {
+          "text": "hey"
+        },
+        {
+          "text": "good morning"
+        },
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "yo"
+        },
+        {
+          "text": "what's up?"
+        },
+        {
+          "text": "good day"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "flower_suggestions",
+      "examples": [
+        {
+          "text": "for my dad"
+        },
+        {
+          "text": "flower suggestions"
+        },
+        {
+          "text": "flower recommendation"
+        },
+        {
+          "text": "bouquet for girlfriend"
+        },
+        {
+          "text": "which flower for funeral?"
+        },
+        {
+          "text": "which flower should i buy?"
+        },
+        {
+          "text": "what kind of flowers?"
+        },
+        {
+          "text": "what are the best flowers for valentines day?"
+        },
+        {
+          "text": "which flowers for birthday?"
+        },
+        {
+          "text": "flowers for anniversary"
+        },
+        {
+          "text": "flowers for valentines day"
+        },
+        {
+          "text": "for my father"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thankyou",
+      "examples": [
+        {
+          "text": "see you"
+        },
+        {
+          "text": "alright,thanks"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thanks a bunch"
+        },
+        {
+          "text": "thank you very much"
+        },
+        {
+          "text": "thankyou"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "goodbye",
+      "examples": [
+        {
+          "text": "bye now"
+        },
+        {
+          "text": "exit"
+        },
+        {
+          "text": "i'm leaving"
+        },
+        {
+          "text": "bye"
+        },
+        {
+          "text": "quit"
+        },
+        {
+          "text": "see you"
+        },
+        {
+          "text": "see you again"
+        },
+        {
+          "text": "goodbye"
+        },
+        {
+          "text": "stop"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "delivery_info",
+      "examples": [
+        {
+          "text": "do you deliver"
+        },
+        {
+          "text": "how much to deliver?"
+        },
+        {
+          "text": "how do i get my flowers?"
+        },
+        {
+          "text": "is delivery free?"
+        },
+        {
+          "text": "do you deliver in holidays?"
+        },
+        {
+          "text": "when will i receive my flowers?"
+        },
+        {
+          "text": "do you deliver on weekends?"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "occasions",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "valentines day",
+          "synonyms": [
+            "feb14",
+            "February 14"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "marriage",
+          "synonyms": [
+            "wedding"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "birthday",
+          "synonyms": [
+            "bday",
+            "birth day",
+            "b-day"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "funeral",
+          "synonyms": [
+            "death day",
+            "funeralday",
+            "last day",
+            "die day"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "gender",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "non binary",
+          "synonyms": [
+            "neither",
+            "both",
+            "intersex",
+            "agender"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "female",
+          "synonyms": [
+            "girl",
+            "women",
+            "lady"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "male",
+          "synonyms": [
+            "man",
+            "boy",
+            "guy"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "relationship",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "mother",
+          "synonyms": [
+            "mom",
+            "mummy"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "son",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "girlfriend",
+          "synonyms": [
+            "gff"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "father",
+          "synonyms": [
+            "dad",
+            "daddy"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "lover",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "wife",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "relative",
+          "synonyms": [
+            "grandfather",
+            "grandmother",
+            "uncle",
+            "ant"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "boyfriend",
+          "synonyms": [
+            "bff"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "husband",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "friend",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "sister",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "response_types",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "uncertain",
+          "synonyms": [
+            "not sure",
+            "unsure",
+            "don't know",
+            "maybe",
+            "not positive",
+            "unknown"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "positive",
+          "synonyms": [
+            "yes",
+            "yeah",
+            "yup",
+            "absolute",
+            "definitely",
+            "yep",
+            "yeppers"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "negative",
+          "synonyms": [
+            "no",
+            "nope",
+            "not definitely",
+            "not at all",
+            "not that i know of"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-07-10"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1556602762943",
+      "event_name": "focus",
+      "dialog_node": "handler_11_1556602762943",
+      "previous_sibling": "handler_10_1556602762943"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1556602762943",
+      "event_name": "input",
+      "dialog_node": "handler_10_1556602762943"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We recommend Tulip or Roses. For more info contact +919787847863"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_23_1556605529771",
+      "metadata": {},
+      "conditions": "@gender:(non binary)",
+      "dialog_node": "node_26_1556605686299",
+      "previous_sibling": "node_25_1556605657195"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We recommend Red Roses. For more info contact +919787847863"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_23_1556605529771",
+      "metadata": {},
+      "conditions": "@gender:female",
+      "dialog_node": "node_25_1556605657195",
+      "previous_sibling": "node_24_1556605602635"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We recommend Tulip or Roses. For more info contact +919787847863"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_23_1556605529771",
+      "metadata": {},
+      "conditions": "@gender:male",
+      "dialog_node": "node_24_1556605602635"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Buying him a flower is always a nice gesture.We recommend opting for a bouquet of Bonsai or Bamboo House plant"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1556602572383",
+      "metadata": {},
+      "conditions": "@relationship:husband || @relationship:boyfriend",
+      "dialog_node": "node_12_1556603403070",
+      "previous_sibling": "node_8_1556602762908"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Buying him a flower is always a nice gesture.We recommend opting for a bouquet of Bonsai or Bamboo House Plant"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1556602572383",
+      "metadata": {},
+      "conditions": "@relationship:father || @relationship:son",
+      "dialog_node": "node_14_1556603595790",
+      "previous_sibling": "node_13_1556603538984"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_6_1556602572383",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1556602762905",
+      "previous_sibling": "node_15_1556603680590"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Buying a flower is always a nice gesture.We recommend opting for a bouquet of Assorted Bouquet or House Plant "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1556602572383",
+      "metadata": {},
+      "conditions": "@relationship:friend || @relationship:relative",
+      "dialog_node": "node_15_1556603680590",
+      "previous_sibling": "node_14_1556603595790"
+    },
+    {
+      "type": "slot",
+      "parent": "node_6_1556602572383",
+      "dialog_node": "slot_9_1556602762943",
+      "previous_sibling": "handler_7_1556602762905"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Buying her a flower is always a nice gesture.We recommend opting for a bouquet of Red Carnations or Geberas"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1556602572383",
+      "metadata": {},
+      "conditions": "@relationship:mother || @relationship:sister",
+      "dialog_node": "node_13_1556603538984",
+      "previous_sibling": "node_12_1556603403070"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Buying her a flower is always a nice gesture.We recommend opting for a bouquet of Red Rose or Red Tulip"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_6_1556602572383",
+      "metadata": {},
+      "conditions": "@relationship:wife || @relationship:girlfriend || @relationship:lover",
+      "dialog_node": "node_8_1556602762908"
+    },
+    {
+      "type": "standard",
+      "title": "Suggestion For Gender",
+      "output": {},
+      "parent": "node_22_1556605381854",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@gender",
+      "dialog_node": "node_23_1556605529771",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Valentines day Gender Questions",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Are the flowers for Male or Female or non-Binary person?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1556602515816",
+      "metadata": {},
+      "conditions": "@occasions:(valentines day)",
+      "dialog_node": "node_22_1556605381854",
+      "previous_sibling": "node_6_1556602572383"
+    },
+    {
+      "type": "standard",
+      "title": "Simple occasion suggestions",
+      "output": {},
+      "parent": "node_5_1556602515816",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@occasions",
+      "dialog_node": "node_16_1556603900757",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_22_1556605381854"
+    },
+    {
+      "type": "standard",
+      "title": "Relationship Suggestions",
+      "output": {},
+      "parent": "node_5_1556602515816",
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@relationship",
+      "dialog_node": "node_6_1556602572383",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1556603900757",
+      "metadata": {},
+      "conditions": "@occasions:(valentines day)",
+      "dialog_node": "node_21_1556604642742",
+      "previous_sibling": "node_20_1556604455551"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For wedding related flower arrangement.For more info contact +91-9787847863"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_16_1556603900757",
+      "metadata": {},
+      "conditions": "@occasions:marriage",
+      "dialog_node": "node_19_1556604385734",
+      "previous_sibling": "node_17_1556603949549"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For Birthday we recommend Orchids,Roses,Gladiolus For more info contact +91-9787847863"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1556603900757",
+      "metadata": {},
+      "conditions": "@occasions:birthday",
+      "dialog_node": "node_20_1556604455551",
+      "previous_sibling": "node_19_1556604385734"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I'm sorry to hear, white cut flowers sent as a sign of sympathy include sympathy lilies, white roses, orchids and irises. For more info contact +91-9787847863"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1556603900757",
+      "metadata": {},
+      "conditions": "@occasions:funeral",
+      "dialog_node": "node_17_1556603949549"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1556601509809"
+    },
+    {
+      "type": "standard",
+      "title": "GoodBye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you for chatting with me today, Have a wonderful day"
+              },
+              {
+                "text": " Thank you for chatting with me today, Have a great day"
+              },
+              {
+                "text": "Great talking to you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#goodbye",
+      "dialog_node": "node_3_1556601509809",
+      "previous_sibling": "node_2_1556601285498"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi. i'm here to help you.Feel free to ask me flower suggestions [or delivery info]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#greetings",
+      "dialog_node": "node_1_1556601098426",
+      "previous_sibling": "node_4_1556601957096"
+    },
+    {
+      "type": "standard",
+      "title": "Thank You",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You're welcome"
+              },
+              {
+                "text": "Anytime"
+              },
+              {
+                "text": "I'm glad to help you"
+              },
+              {
+                "text": "No problem"
+              },
+              {
+                "text": "You're very welcome"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#thankyou",
+      "dialog_node": "node_2_1556601285498",
+      "previous_sibling": "node_1_1556601098426"
+    },
+    {
+      "type": "standard",
+      "title": "Flower Suggestions",
+      "output": {
+        "generic": []
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1556602572383"
+      },
+      "conditions": "#flower_suggestions",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1556602515816",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Delivery Infromation",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I'm glad you asked, Our deliveries are free and can be scheduled at checkout.We requires an 24 hours notice.We delivery 7 days a week,holidays included.We only deliver in the city of Madurai, Tamilnadu."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#delivery_info",
+      "dialog_node": "node_4_1556601957096",
+      "previous_sibling": "node_5_1556602515816"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, My name is Florence and i'm a chat bot. How can i help you?. You can ask me about flower suggestions or information about delivery."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "d32e9eb2-113b-49a7-aa5c-081055ee78c6",
+  "counterexamples": [
+    {
+      "text": "foe my wife"
+    },
+    {
+      "text": "for my dad"
+    },
+    {
+      "text": "male"
+    }
+  ],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
